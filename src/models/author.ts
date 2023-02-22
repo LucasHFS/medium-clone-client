@@ -1,6 +1,8 @@
 interface Author {
   name: string;
-  avatarUrl: string;
+  bio: string;
+  image: string;
+  following: boolean;
 }
 
 export default Author;
