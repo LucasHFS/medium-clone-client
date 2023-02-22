@@ -12,16 +12,16 @@ function Header() {
   return (
     <nav className="py-2 px-6 container mx-auto">
       <div className="flex justify-between items-center">
-        <a className="text-primary font-bold text-lg">medium</a>
+        <Link href="/" className="text-primary font-bold text-lg">medium</Link>
         <ul className="flex gap-4 py-2 text-sm ">
-          <li className={`${isActive("/posts") ? "": "text-slate-400 hover:text-slate-600"}`}>
-            <Link href="/posts">Home</Link>
+          <li className={`${isActive("/") ? "": "text-slate-400 hover:text-slate-600"}`}>
+            <Link href="/">Home</Link>
           </li>
           <li className={`${isActive("/login") ? "": "text-slate-400 hover:text-slate-600"}`}>
-            <Link href="/login">Sing in</Link>
+            <Link href="/login">Sign In</Link>
           </li>
-          <li className={`${isActive("/singup") ? "": "text-slate-400 hover:text-slate-600"}`}>
-            <Link href="/singup">Sign up</Link>
+          <li className={`${isActive("/register") ? "": "text-slate-400 hover:text-slate-600"}`}>
+            <Link href="/register">Sign up</Link>
           </li>
         </ul>
       </div>

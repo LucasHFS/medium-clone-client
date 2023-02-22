@@ -1,18 +1,8 @@
-import { ReactNode } from 'react'
+import { Article }  from '@/models/post'
 
-const Nav = ({ children }: { children: ReactNode }) => {
-  return <ul className="border-b flex">{children}</ul>
-}
+type ArticlePreviewProps = Omit< Article, 'content' >
 
-const NavPill = () => {
-  return (  
-    <li className="px-4 py-2 text-primary text-sm border-b-2 border-primary">
-      Global Feed
-    </li>
-  )
-}
-
-const ArticlePreview = () => {
+const ArticlePreview = ({author, date , title, description, tags, favoriteCount}: ArticlePreviewProps) => {
   return (
     <div className="py-6 border-b">
       <div className="flex justify-between items-start mb-4">
@@ -62,32 +52,5 @@ const ArticlePreview = () => {
   )
 }
 
-export default function Posts() {
-  return (
-    <div className="flex-1">
-      <div className="p-8 text-center bg-primary text-white">
-        <h1 className="text-5xl font-bold mb-3">medium</h1>
-        <p className="text-xl font-light">A place to share knowledge</p>
-      </div>
-      <div className="container mx-auto mt-7 row">
-        <div className="flex items-start">
-          <div className="w-3/4 mr-4">
-            <Nav>
-              <NavPill></NavPill>
-            </Nav>
-            <ArticlePreview></ArticlePreview>
-            <ArticlePreview></ArticlePreview>
-            <ArticlePreview></ArticlePreview>
-            <ArticlePreview></ArticlePreview>
-          </div>
-          <div className="w-1/4 bg-gray-100 ml-4 px-2 py-4 rounded-sm">
-            <p className="text-sm text-gray-900">Popular Tags</p>
-            <span className="px-2 pb-1 rounded-full text-xs text-gray-100 bg-gray-500">
-              coding
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+
+export default ArticlePreview
